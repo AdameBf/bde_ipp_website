@@ -1,3 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Handle account registration
+def register(request):
+    if request.method == 'POST':
+        # Perform checks
+        pass
+    else:
+        form = UserCreationForm(request.POST)
+    context = {
+        'forms': form
+    }
+    return render(request, 'portal/register.html', context)
