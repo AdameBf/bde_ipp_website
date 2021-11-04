@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import RegistrationForm
 
 # Handle account registration
 def register(request):
@@ -6,7 +7,7 @@ def register(request):
         # Perform checks
         pass
     else:
-        form = UserCreationForm(request.POST)
+        form = RegistrationForm(request.POST)
     context = {
         'forms': form
     }
