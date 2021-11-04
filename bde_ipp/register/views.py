@@ -11,4 +11,4 @@ def register(request):
     context = {
         'forms': form
     }
-    return render(request, 'portal/register.html', context)
+    return render(request, 'register.html', context)
