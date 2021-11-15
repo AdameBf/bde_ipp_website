@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from .forms import RegistrationForm
 
+
 # Handle account registration
 def register(request):
     if request.method == 'POST':
         # Perform checks
         pass
     else:
-        form = RegistrationForm(request.POST)
+        form = RegistrationForm()
     context = {
-        'forms': form
+        'form': form
     }
-    return render(request, 'register.html', context)
+    return render(request, 'register/register.html', context)

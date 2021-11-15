@@ -2,23 +2,10 @@
 
 {% block content %}
 
-<form method="post" action="{% url 'register:register' %}">
+<form method="post" action="{% url 'register' %}">
     {% csrf_token %}
 
-    <label for="{{ form.first_name.id_for_label }}">
-    {{ form.first_name }}
-
-    <label for="{{ form.last_name.id_for_label }}">
-    {{ form.last_name }}
-
-    <label for="{{ form.birth_date.id_for_label }}">
-    {{ form.birth_date }}
-
-    <label for="{{ form.email.id_for_label }}">
-    {{ form.email }}
-
-    <label for="{{ form.address.id_for_label }}">
-    {{ form.address }}
+    {{ form.as_p }}
 </form>
 
 {% endblock %}
