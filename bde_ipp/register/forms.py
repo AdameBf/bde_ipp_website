@@ -9,7 +9,7 @@ class RegistrationForm(forms.Form):
     birth_date = forms.DateField(required=True, label='Date of Birth', initial=datetime.date.today)
     programme_type = forms.ChoiceField(required=True, label='Programme',
         choices=[('m1', 'Master 1'), ('m2', 'Master 2'), ('phd', 'PhD track')])
-    programme_name = forms.CharField(max_length=127, label='')  # Specify exact programme followed
+    programme_name = forms.CharField(max_length=63, label='')  # Specify exact programme followed
     statutes_rop_agreement = forms.BooleanField(required=True, label=
     """
     I accept and acknowledge the Statutes and the Rules of Procedure of the association.
