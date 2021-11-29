@@ -2,10 +2,51 @@
 
 {% block content %}
 
+<h1>Registration form</h1>
+
 <form method="post" action="{% url 'register' %}">
     {% csrf_token %}
 
-    {{ form.as_p }}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.first_name.errors }}
+        <label for="{{ form.first_name.id_for_label }}">{{form.first_name.label}}:</label>
+        {{ form.first_name }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.last_name.errors }}
+        <label for="{{ form.last_name.id_for_label }}">{{form.last_name.label}}:</label>
+        {{ form.last_name }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.birth_date.errors }}
+        <label for="{{ form.birth_date.id_for_label }}">{{form.birth_date.label}}:</label>
+        {{ form.birth_date }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.email.errors }}
+        <label for="{{ form.email.id_for_label }}">{{form.email.label}}:</label>
+        {{ form.email }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.address.errors }}
+        <label for="{{ form.address.id_for_label }}">{{form.address.label}}:</label>
+        {{ form.address }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.programme_type.errors }}
+        <label for="{{ form.programme_type.id_for_label }}">{{form.programme_type.label}}:</label>
+        {{ form.programme_type }} {{ form.programme_name }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.statutes_rop_agreement.errors }}
+        {{ form.statutes_rop_agreement }}
+        <label for="{{ form.statutes_rop_agreement.id_for_label }}">{{ form.statutes_rop_agreement.label }}</label>
+    </div>
+
+    <div class="fieldWrapper">
+        <input type="submit" value="Submit" />
+    </div>
 </form>
 
 {% endblock %}
