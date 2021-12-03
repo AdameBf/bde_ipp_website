@@ -8,44 +8,70 @@
     {% csrf_token %}
 
     {{ form.non_field_errors }}
-    <div class="fieldWrapper">
+    <div class="fieldWrapper row justify-content-center">
         {{ form.first_name.errors }}
-        <label for="{{ form.first_name.id_for_label }}">{{form.first_name.label}}:</label>
-        {{ form.first_name }}
+        <div class="col-3">
+            <label for="{{ form.first_name.id_for_label }}">{{form.first_name.label}}:</label>
+        </div>
+        <div class="col-2">
+            {{ form.first_name }}
+        </div>
     </div>
-    <div class="fieldWrapper">
+    <div class="fieldWrapper row justify-content-center">
         {{ form.last_name.errors }}
-        <label for="{{ form.last_name.id_for_label }}">{{form.last_name.label}}:</label>
-        {{ form.last_name }}
+        <div class="col-3">
+            <label for="{{ form.last_name.id_for_label }}">{{form.last_name.label}}:</label>
+        </div>
+        <div class="col-2">
+            {{ form.last_name }}
+        </div>
     </div>
-    <div class="fieldWrapper">
+    <div class="fieldWrapper row justify-content-center">
         {{ form.birth_date.errors }}
-        <label for="{{ form.birth_date.id_for_label }}">{{form.birth_date.label}}:</label>
-        {{ form.birth_date }}
+        <div class="col-3">
+            <label for="{{ form.birth_date.id_for_label }}">{{form.birth_date.label}}:</label>
+        </div>
+        <div class="col-2">
+            {{ form.birth_date }}
+        </div>
     </div>
-    <div class="fieldWrapper">
+    <div class="fieldWrapper row justify-content-center">
         {{ form.email.errors }}
-        <label for="{{ form.email.id_for_label }}">{{form.email.label}}:</label>
-        {{ form.email }}
+        <div class="col-3">
+            <label for="{{ form.email.id_for_label }}">{{form.email.label}}:</label>
+        </div>
+        <div class="col-2">
+            {{ form.email }}
+        </div>
     </div>
-    <div class="fieldWrapper">
+    <div class="fieldWrapper row justify-content-center">
         {{ form.address.errors }}
-        <label for="{{ form.address.id_for_label }}">{{form.address.label}}:</label>
-        {{ form.address }}
+        <div class="col-3">
+            <label for="{{ form.address.id_for_label }}">{{form.address.label}}:</label>
+        </div>
+        <div class="col-2">
+            {{ form.address }}
+        </div>
     </div>
-    <div class="fieldWrapper">
+    <div class="fieldWrapper row justify-content-center">
         {{ form.programme_type.errors }}
-        <label for="{{ form.programme_type.id_for_label }}">{{form.programme_type.label}}:</label>
-        {{ form.programme_type }} {{ form.programme_name }}
+        <div class="col-3">
+            <label for="{{ form.programme_type.id_for_label }}">{{form.programme_type.label}}:</label>
+        </div>
+        <div class="col-2">
+            {{ form.programme_type }} {{ form.programme_name }}
+        </div>
     </div>
-    <div class="fieldWrapper">
+    <div class="fieldWrapper row justify-content-center">
+        <div class="col">
         {{ form.statutes_rop_agreement.errors }}
         {{ form.statutes_rop_agreement }}
         <label for="{{ form.statutes_rop_agreement.id_for_label }}">{{ form.statutes_rop_agreement.label }}</label>
+        </div>
     </div>
 
     <div class="fieldWrapper">
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" class="btn btn-primary"/>
     </div>
 </form>
 
