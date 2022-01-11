@@ -12,6 +12,6 @@ class RegistrationForm(forms.Form):
     programme_name = forms.CharField(max_length=63, label='',widget=forms.TextInput(attrs={'class': 'form-text'}))  # Specify exact programme followed
     statutes_rop_agreement = forms.BooleanField(required=True, label=
     """
-    I accept and acknowledge the <a href="{% url 'documents:statutes_en' %}">Statutes</a> (<a href="{% url 'documents:statutes_fr' %}">Statuts</a>) and the <a href="{% url 'documents:rop_en' %}">Rules of Procedure</a> (<a href="{% url 'documents:rop_fr' %}">Règlement Intérieur</a>) of the association.
+    I accept and acknowledge the Statutes and the Rules of Procedure of the association.
     I promise to pay my membership fee in accordance with the conditions described in the Rules of Procedure.
     """,widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))

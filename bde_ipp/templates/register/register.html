@@ -62,12 +62,17 @@
             {{ form.programme_type }} {{ form.programme_name }}
         </div>
     </div>
+
     <div class="fieldWrapper row justify-content-center">
         <div class="col">
         {{ form.statutes_rop_agreement.errors }}
         {{ form.statutes_rop_agreement }}
         <label for="{{ form.statutes_rop_agreement.id_for_label }}">{{ form.statutes_rop_agreement.label }}</label>
         </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <p>Links to the <a href="{% url 'documents:statutes_en' %}">statutes</a> (<a href="{% url 'documents:statutes_fr' %}">statuts</a>) and the <a href="{% url 'documents:rop_en' %}">rules of procedure</a> (<a href="{% url 'documents:rop_fr' %}">règlement intérieur</a>).</p>
     </div>
 
     <div class="fieldWrapper">
