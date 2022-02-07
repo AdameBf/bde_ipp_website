@@ -2,10 +2,9 @@ from django.db import models
 
 
 class Member(models.Model):
-    PROGRAMME_TYPES = (
+    MASTER_LEVELS = (
         ('m1', 'Master 1'),
         ('m2', 'Master 2'),
-        ('phd', 'PhD track'),
     )
 
     first_name = models.CharField(max_length=32)
@@ -13,6 +12,7 @@ class Member(models.Model):
     email = models.EmailField()
     address = models.CharField(max_length=255)
     birth_date = models.DateField()
-    programme_type = models.CharField(max_length=3, choices=PROGRAMME_TYPES)
+    master_level = models.CharField(max_length=2, choices=MASTER_LEVELS)
+    phd_track = models.BooleanField(default=False)
     programme_name = models.CharField(max_length=63)
     membership_fee_paid = models.BooleanField(default=False)

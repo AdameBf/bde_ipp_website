@@ -54,12 +54,12 @@
         </div>
     </div>
     <div class="fieldWrapper row justify-content-center">
-        {{ form.programme_type.errors }}
+        {{ form.master_level.errors }}
         <div class="col-3">
-            <label for="{{ form.programme_type.id_for_label }}">{{form.programme_type.label}}:</label>
+            <label for="{{ form.master_level.id_for_label }}">{{form.master_level.label}}:</label>
         </div>
         <div class="col-2">
-            {{ form.programme_type }} {{ form.programme_name }}
+		{{ form.master_level }} {{ form.programme_name }} {{ form.phd_track }} {{form.phd_track.label }}
         </div>
     </div>
 
