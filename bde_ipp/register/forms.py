@@ -9,7 +9,7 @@ class RegistrationForm(forms.Form):
     birth_date = forms.DateField(required=True, label='Date of Birth', initial=datetime.date.today,widget=forms.DateInput(attrs={'class': 'form-text form-control '}))
     master_level = forms.ChoiceField(required=True, label='Programme Details',
         choices=[('m1', 'Master 1'), ('m2', 'Master 2')],widget=forms.Select(attrs={'class': 'form-select form-select-sm'}))
-    phd_track = forms.BooleanField(required=True, label="PhD track student")
+    phd_track = forms.BooleanField(required=False, label="PhD track student")
     programme_name = forms.CharField(max_length=63, label='Name ',widget=forms.TextInput(attrs={'class': 'form-text form-control'}))  # Specify exact programme followed
     statutes_rop_agreement = forms.BooleanField(required=True, label=
     """
