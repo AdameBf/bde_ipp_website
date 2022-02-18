@@ -11,18 +11,25 @@
             color:  black;
         }
         .nav-link1:hover{
-            transition:  2s;
+            transition:  1s;
             background-color: #22171a1f;
             text-align: center;
             border-radius: 20px;
             color:  white;
 
         }
+        .footer{
+            background-color: #ECEFF1; position: sticky;
+            bottom: 0;
+            margin-top: 10px;
+            width: 100%;
+            height: 56px;
+        }
     </style>
 </head>
 <body>
 	<!-- Display contents -->
-    <nav  style="background: linear-gradient(140deg, #eb8a3c 12%,#e9500e 17%, #ce0037 30%, #fab600 99%)" id="main-navbar">
+    <nav  style="background: linear-gradient(140deg, #eb8a3c 16%,#e9500e 18%, #ce0037 28%, #fab600 99%)" id="main-navbar">
     
         <div style="display: flexbox;  flex-wrap: nowrap;">
             <ul class="navbar-nav mr-auto" style="display: grid;
@@ -33,10 +40,10 @@
                     </a>
                 </li>
                 <li class="nav-item active" style="margin-top: 24px;">
-                    <a class="nav-link nav-link1" href="/"><span></span> Home</a>
+                    <a class="nav-link nav-link1" href="/"> Home</a>
                 </li>
                 <li class="nav-item" style="margin-top: 24px;">
-                    <a class="nav-link nav-link1 disabled" href="#" tabindex="-1" aria-disabled="true">About Page?</a>
+                    <a class="nav-link nav-link1" href="http://127.0.0.1:8000/About" tabindex="-1" >About Page?</a>
                 </li>
             </ul>
         </div>
@@ -52,11 +59,7 @@
 
     <!-- Footer -->
     <div class="footer navbar-inverse navbar-static-bottom" >
-        <footer style="background-color: #ECEFF1; position: sticky;
-        bottom: 0;
-        margin-top: 10px;
-        width: 100%;
-        height: 56px;">
+        <footer>
             
         
             <!-- Copyright -->
