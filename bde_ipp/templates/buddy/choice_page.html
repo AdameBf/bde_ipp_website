@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="container d-flex justify-content-center">
+        <a href="{% url 'buddy_form' %}" class="btn btn-primary m-3" role="button">I am a new student</a>
+        <a href="{% url 'buddlunteer_form' %}" class="btn btn-primary m-3" role="button">I am a buddlunteer</a>
+    </div>
+
+{% endblock %}
