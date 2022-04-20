@@ -34,13 +34,18 @@ ALLOWED_HOSTS = ['127.0.0.1', 'bde-ipparis.rezel.net']
 INSTALLED_APPS = [
     'register',
     'documents',
+    'buddy',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'multiselectfield',
+    'crispy_forms'
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

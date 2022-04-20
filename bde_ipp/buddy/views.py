@@ -2,16 +2,20 @@ from django.shortcuts import render
 
 # Create your views here.
 from .forms import BuddyForm, BuddlunteersForm
+from .models import Buddlunteer
 
 
 def buddlunteers_form(request):
     # TODO: Add a form to the page
     if request.method == 'POST':
-        form = BuddlunteersForm(request.POST)
+        instance = Buddlunteer()
+        form = BuddlunteersForm(request.POST, instance=instance)
         if form.is_valid():
-            pass
+            form.save()
+    else:
+        form = BuddlunteersForm()
 
-    return render(request, 'buddy/buddy_form.html')
+    return render(request, 'buddy/buddy_form.html', {'form': form})
 
 
 def buddy_form(request):
