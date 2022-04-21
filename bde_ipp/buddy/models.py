@@ -57,9 +57,23 @@ JUNG_PERSONALITY_TEST_CHOICES = (
     ('esfp', 'Entertainer (ESFP)'),
 )
 
+
 # TODO: add inheritence from a larger class to avoid repetitions
 class Buddy(models.Model):
-    pass
+    data_privacy = BooleanField()
+    first_name = CharField(max_length=255)
+    last_name = CharField(max_length=255)
+    email = EmailField()
+    level = CharField(choices=YEAR_CHOICES, max_length=50)
+    study = MultiSelectField(choices=STUDY_CHOICES)
+    gender = CharField(choices=GENDER_CHOICES, max_length=50)
+    gender_matching = CharField(choices=GENDER_MATCHING_CHOICES, max_length=50)
+    # Other fields such as :
+    # "What would you do on Sunday evening",
+    # "What do you have the most knowledge of ?"
+    # "Favorite movie type"
+    # "Living on campus or outside campus" ?
+    jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
 
 
 class Buddlunteer(models.Model):
@@ -77,4 +91,4 @@ class Buddlunteer(models.Model):
     # "What do you have the most knowledge of ?"
     # "Favorite movie type"
     # "Living on campus or outside campus" ?
-    jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50)
+    jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
