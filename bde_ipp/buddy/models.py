@@ -58,25 +58,7 @@ JUNG_PERSONALITY_TEST_CHOICES = (
 )
 
 
-# TODO: add inheritence from a larger class to avoid repetitions
-class Buddy(models.Model):
-    data_privacy = BooleanField()
-    first_name = CharField(max_length=255)
-    last_name = CharField(max_length=255)
-    email = EmailField(unique=True)
-    level = CharField(choices=YEAR_CHOICES, max_length=50)
-    study = MultiSelectField(choices=STUDY_CHOICES)
-    gender = CharField(choices=GENDER_CHOICES, max_length=50)
-    gender_matching = CharField(choices=GENDER_MATCHING_CHOICES, max_length=50)
-    # Other fields such as :
-    # "What would you do on Sunday evening",
-    # "What do you have the most knowledge of ?"
-    # "Favorite movie type"
-    # "Living on campus or outside campus" ?
-    jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
-    has_matched = BooleanField(default=False, editable=False)
-
-
+# Be careful about how to proceed, what kind of relashionship between models ? etc.
 class Buddlunteer(models.Model):
     data_privacy = BooleanField()
     first_name = CharField(max_length=255)
@@ -93,4 +75,22 @@ class Buddlunteer(models.Model):
     # "Favorite movie type"
     # "Living on campus or outside campus" ?
     jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
-    has_matched = BooleanField(default=False, editable=False)
+    has_matched = BooleanField(default=False)  # Might not be needed
+
+
+class Buddy(models.Model):
+    data_privacy = BooleanField()
+    first_name = CharField(max_length=255)
+    last_name = CharField(max_length=255)
+    email = EmailField(unique=True)
+    level = CharField(choices=YEAR_CHOICES, max_length=50)
+    study = MultiSelectField(choices=STUDY_CHOICES)
+    gender = CharField(choices=GENDER_CHOICES, max_length=50)
+    gender_matching = CharField(choices=GENDER_MATCHING_CHOICES, max_length=50)
+    # Other fields such as :
+    # "What would you do on Sunday evening",
+    # "What do you have the most knowledge of ?"
+    # "Favorite movie type"
+    # "Living on campus or outside campus" ?
+    jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
+    associated_buddlunteer = models.ForeignKey(Buddlunteer, on_delete=models.CASCADE)  # One to many relationship

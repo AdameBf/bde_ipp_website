@@ -6,10 +6,10 @@ from .models import Buddlunteer, Buddy
 class BuddlunteersForm(ModelForm):
     class Meta:
         model = Buddlunteer
-        fields = '__all__'
+        exclude = ['has_matched']
 
 
 class BuddyForm(ModelForm):
     class Meta:
         model = Buddy
-        fields = '__all__'
+        exclude = ['associated_buddlunteer']
