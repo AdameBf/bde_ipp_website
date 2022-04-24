@@ -93,4 +93,5 @@ class Buddy(models.Model):
     # "Favorite movie type"
     # "Living on campus or outside campus" ?
     jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
-    associated_buddlunteer = models.ForeignKey(Buddlunteer, on_delete=models.CASCADE)  # One to many relationship
+    # One to many relationship
+    associated_buddlunteer = models.ForeignKey(Buddlunteer, on_delete=models.CASCADE, null=True)

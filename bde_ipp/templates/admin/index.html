@@ -1,0 +1,28 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+
+    <div id="content-main">
+    {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+    <div class="module">
+        <table style="width: 100%;">
+            <caption>
+                Actions
+            </caption>
+            <tbody>
+                <tr> <th scope="row">
+                    {# FIXME: Hardcore link, to be changed #}
+                    {% url 'buddy_matching' as buddy_matching_url %}
+                    {% if buddy_matching_url %}
+                        <a href="{% url 'buddy_matching' %}">Make the matching</a>
+                    {% else %}
+                        <span>Make the matching (URL not working)</span>
+                    {% endif %}
+                </th> </tr>
+            </tbody>
+        </table>
+     </div>
+    </div>
+
+
+{% endblock %}
