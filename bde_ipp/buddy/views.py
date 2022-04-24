@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -30,4 +32,4 @@ def buddy_form_view(request):
 
 
 def choice_page(request):
-    return render(request, 'buddy/choice_page.html')
+    return render(request, 'buddy/choice_page.html', {'DEBUG': os.environ['BDEIPP_DEBUG']})
