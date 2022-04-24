@@ -63,7 +63,7 @@ class Buddy(models.Model):
     data_privacy = BooleanField()
     first_name = CharField(max_length=255)
     last_name = CharField(max_length=255)
-    email = EmailField()
+    email = EmailField(unique=True)
     level = CharField(choices=YEAR_CHOICES, max_length=50)
     study = MultiSelectField(choices=STUDY_CHOICES)
     gender = CharField(choices=GENDER_CHOICES, max_length=50)
@@ -74,13 +74,14 @@ class Buddy(models.Model):
     # "Favorite movie type"
     # "Living on campus or outside campus" ?
     jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
+    has_matched = BooleanField(default=False, editable=False)
 
 
 class Buddlunteer(models.Model):
     data_privacy = BooleanField()
     first_name = CharField(max_length=255)
     last_name = CharField(max_length=255)
-    email = EmailField()
+    email = EmailField(unique=True)
     level = CharField(choices=YEAR_CHOICES, max_length=50)
     study = MultiSelectField(choices=STUDY_CHOICES)
     nb_buddies = IntegerField()
@@ -92,3 +93,4 @@ class Buddlunteer(models.Model):
     # "Favorite movie type"
     # "Living on campus or outside campus" ?
     jung_personality_test = CharField(choices=JUNG_PERSONALITY_TEST_CHOICES, max_length=50, blank=True)
+    has_matched = BooleanField(default=False, editable=False)

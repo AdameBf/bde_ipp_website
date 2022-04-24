@@ -1,7 +1,5 @@
-import datetime
-
-from django import forms
 from django.forms import ModelForm
+
 from .models import Buddlunteer
 
 
@@ -11,5 +9,7 @@ class BuddlunteersForm(ModelForm):
         fields = '__all__'
 
 
-class BuddyForm(forms.Form):
-    pass
+class BuddyForm(ModelForm):
+    class Meta:
+        model = Buddlunteer
+        fields = '__all__'

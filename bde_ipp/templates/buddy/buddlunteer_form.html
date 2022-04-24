@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<h1>Buddy Program - Buddy Registration form</h1>
+<h1>Buddy Program - Buddlunteer Registration form</h1>
 
-<form method="post" action="{% url 'buddy_form' %}">
+<form method="post" action="{% url 'buddlunteer_form' %}">
     {% csrf_token %}
 
     {{ form|crispy }}
