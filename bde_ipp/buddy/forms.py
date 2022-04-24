@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from .models import Buddlunteer
+from .models import Buddlunteer, Buddy
 
 
 class BuddlunteersForm(ModelForm):
@@ -11,5 +11,5 @@ class BuddlunteersForm(ModelForm):
 
 class BuddyForm(ModelForm):
     class Meta:
-        model = Buddlunteer
+        model = Buddy
         fields = '__all__'
